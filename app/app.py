@@ -1,5 +1,6 @@
 from flask import (request, jsonify, Flask)
 from flask_cors import CORS
+import os
 
 
 app = Flask(__name__)
@@ -28,6 +29,7 @@ def comment_data():
 
 
 if __name__ == "__main__":
-    app.run(debug = False)
+    app.run(debug = False, host="0.0.0.0", 
+            port = os.environ.get("PORT", 80))
 
 

@@ -1,1 +1,1 @@
-cmd: gunicorn -b:$PORT app:cd app && flask run --no-debugger
+web: gunicorn -b:$PORT app:app
