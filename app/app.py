@@ -1,4 +1,4 @@
-from flask import (request, jsonify, Flask)
+from flask import (request, jsonify, Flask, send_from_directory)
 from flask_cors import CORS
 import os
 
@@ -10,7 +10,7 @@ cors = CORS(app, support_credentials=True, origin = {'r{/api/*}'})
 
 @app.route('/')
 def index():
-    return app.send_static_file('index.html')
+    return send_from_directory(app.static_folder, 'index.html')
 
 
 @app.route("/api/comments", methods = ["GET"])
